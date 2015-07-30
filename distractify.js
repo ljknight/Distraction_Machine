@@ -7,10 +7,6 @@ var $contentImage = $('.content-image');
 var randomTag;
 
 var tagList = ['funny', 'cute-gif', 'lol', 'dog', 'dog-gif', 'cat', 'cat-gif', 'dog-gif', 'lol-gif', 'animals'];
-var tagIndex = [];
-  for (var i = 0; i < 20; i++) {
-  tagIndex.push(i);
-  }
 
 var timestamp = [];
 var currentMs = Math.floor((new Date()).getTime()/1000);
@@ -36,8 +32,21 @@ var loadRandomImage = function(tag) {
     url: 'http://api.tumblr.com/v2/tagged?tag='+tag+'&before='+randomTime+'&api_key=dlqISFs67gOticMc5ReDbzBDSAAkvVlnzIepQ42qhwD7m1rtYp', 
     dataType: 'jsonp',
     success: function(results) {
-      console.log(results);
-      $contentImage.attr('src', results.response[0].photos[0].alt_sizes[0].url);
+      console.log('tumblr result: ', results);
+
+      // make sure it's a photo post & post
+      var responseIndex = 0;
+
+      var postImage = function() {
+        if (results.response[responseIndex].photos) {
+          $contentImage.attr('src', results.response[responseIndex].photos[0].alt_sizes[0].url);
+        } else {
+          responseIndex++
+          console.log('trying again');
+          postImage();
+        }
+      }
+      postImage();
     }
   });
 
