@@ -1,0 +1,23 @@
+header, section {
+  margin: 0 auto;
+  text-align: center;
+  width: 800px;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+.content-image {
+  max-height: 500px;
+  max-width: 500px;
+}
+
+
