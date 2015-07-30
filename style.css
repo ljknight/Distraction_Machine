@@ -1,18 +1,157 @@
-header, section {
-  margin: 0 auto;
-  text-align: center;
-  width: 800px;
+* {
+  box-sizing: border-box;
 }
 
-.button {
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+header, section {
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  width: 90%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  float: left;
+  margin-right: 20px;
+}
+
+.tagline {
+  font-size: 16px;
+  margin-top: 32px;
+  width: 400px;
+}
+
+/* Clearfix hack */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* For IE 6/7 only */
+.cf {
+    *zoom: 1;
+}
+
+button {
   cursor: pointer;
-  display: inline-block;
-  height: 100px;
-  width: 100px;
+}
+
+.begin-button, .startover-button, .random-button {
+  background-color: #ff66cc;
+  border-width: 0;
+  font-size: 16px;
+  height: 40px;
+  margin-top: 20px;
+  width: 95px;
+}
+
+.begin-button:hover, .startover-button:hover, .random-button:hover {
+  background-color: #ccff66;
 }
 
 .hide {
   display: none;
+}
+
+.empty {
+  height: 18px;
+  margin-top: 32px;
+}
+
+.tag-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.tagged {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 40px;
+  float: left;
+  font-size: 12px;
+  height: 80px;
+  margin: 5px;
+  padding: 1px;
+  width: 80px;
+
+  -webkit-animation: bounce 800ms ease-out;
+  animation: bounce 800ms ease-out;
+}
+
+.tagged:hover {
+  background-color: #66ccff;
+}
+
+/* Webkit, Chrome and Safari */
+
+@-webkit-keyframes bounce {
+  0% {
+  -webkit-transform:translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    -webkit-transform:translateY(-100%);
+    opacity: 0;
+  }
+  15% {
+    -webkit-transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+    -webkit-transform:translateY(-50%);
+  }
+  40% {
+    -webkit-transform:translateY(0%);
+    padding-bottom: 6px;
+  }
+  50% {
+    -webkit-transform:translateY(-30%);
+  }
+  70% {
+    -webkit-transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+    -webkit-transform:translateY(-15%);
+  }
+  90% {
+    -webkit-transform:translateY(0%);
+    padding-bottom: 8px;
+  }
+  95% {
+    -webkit-transform:translateY(-10%);
+  }
+  97% {
+    -webkit-transform:translateY(0%);
+    padding-bottom: 9px;
+  }
+  99% {
+    -webkit-transform:translateY(-5%);
+  }
+  100% {
+    -webkit-transform:translateY(0);
+    padding-bottom: 9px;
+    opacity: 1;
+  }
+}
+
+.content {
+  margin-top: 50px;
 }
 
 .content-image {
