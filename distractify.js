@@ -4,6 +4,7 @@ var $randomButton = $('.random-button');
 var $nav = $('nav');
 var $content = $('.content');
 var $contentImage = $('.content-image');
+var $loadingImage = $('.loading-image');
 var randomTag;
 
 var tagList = ['funny', 'cute-gif', 'lol', 'dog', 'dog-gif', 'cat', 'cat-gif', 'dog-gif', 'lol-gif', 'animals'];
@@ -28,6 +29,7 @@ var loadRandomImage = function(tag) {
   $nav.append($('<button>'+tag+'</button>').addClass(tag + ' tagged'));
   $tagged = $('.tagged');
   
+  $loadingImage.show();
   $.ajax({
     url: 'http://api.tumblr.com/v2/tagged?tag='+tag+'&before='+randomTime+'&api_key=dlqISFs67gOticMc5ReDbzBDSAAkvVlnzIepQ42qhwD7m1rtYp', 
     dataType: 'jsonp',
@@ -47,6 +49,9 @@ var loadRandomImage = function(tag) {
         }
       }
       postImage();
+    },
+    complete: function() {
+      $loadingImage.hide();
     }
   });
 
