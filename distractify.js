@@ -7,6 +7,7 @@ var $tagContainer = $('.tag-container');
 var $tagged; 
 var $content = $('.content');
 var $contentImage = $('.content-image');
+var $imgLink = $('.img-link');
 var $loadingImage = $('.loading-image');
 var randomTag;
 var tagCount = 1;
@@ -73,6 +74,7 @@ var loadRandomImage = function(tag) {
       var postImage = function() {
         if (results.response[responseIndex].photos) {
           $contentImage.attr('src', results.response[responseIndex].photos[0].alt_sizes[0].url);
+          $imgLink.attr('href', results.response[responseIndex].image_permalink);
         } else {
           responseIndex++
           console.log('trying again');
