@@ -16,6 +16,7 @@ header, section {
 
 ul {
   list-style: none;
+  margin-bottom: 20px;
   padding-left: 0;
 }
 
@@ -81,14 +82,19 @@ button {
 .tagged {
   background-color: white;
   border: 1px solid black;
-  border-radius: 40px;
+  border-radius: 45px;
   float: left;
   font-size: 12px;
-  height: 80px;
+  height: 90px;
   margin: 5px;
-  padding: 1px;
-  width: 80px;
+  padding: 5px;
+  width: 90px;
 
+  /*-webkit-animation: bounce 800ms ease-out;
+  animation: bounce 800ms ease-out;*/
+}
+
+.animated {
   -webkit-animation: bounce 800ms ease-out;
   animation: bounce 800ms ease-out;
 }
@@ -150,13 +156,10 @@ button {
   }
 }
 
-.content {
-  margin-top: 50px;
-}
-
 .content-image {
-  max-height: 500px;
-  max-width: 500px;
+  margin-top: 40px;
+  max-height: 450px;
+  max-width: 450px;
 }
 
 
