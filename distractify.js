@@ -63,7 +63,6 @@ var loadRandomImage = function(tag) {
 
   $loadingImage.show();
   $.ajax({
-    url: 'http://api.tumblr.com/v2/tagged?tag='+tag+'&before='+randomTime+'&api_key=dlqISFs67gOticMc5ReDbzBDSAAkvVlnzIepQ42qhwD7m1rtYp', 
     dataType: 'jsonp',
     success: function(results) {
       console.log('tumblr result: ', results);
